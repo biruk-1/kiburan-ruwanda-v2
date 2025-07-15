@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Colors */
+  --kiburan-blue: #1E3B8A;
+  --kiburan-blue-light: #2A4A9F;
+  --kiburan-green: #1A2F2F;
+  --kiburan-white: #F5F5F5;
+  --kiburan-black: #1A1A1A;
+  
+  /* Neutral Colors */
+  --neutral-50: #FAFAFA;
+  --neutral-100: #F4F4F5;
+  --neutral-200: #E4E4E7;
+  --neutral-300: #D4D4D8;
+  --neutral-400: #A1A1AA;
+  --neutral-500: #71717A;
+  --neutral-600: #52525B;
+  --neutral-700: #3F3F46;
+  --neutral-800: #27272A;
+  --neutral-900: #18181B;
+  
+  /* Spacing System */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  
+  /* Typography Scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  
+  /* Animation Timing */
+  --transition-fast: 150ms;
+  --transition-base: 300ms;
+  --transition-slow: 500ms;
+  --transition-slower: 1000ms;
+}
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--kiburan-black);
+    color: var(--kiburan-white);
+    letter-spacing: -0.025em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .heading-1 {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+
+  .heading-2 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .heading-3 {
+    @apply text-2xl sm:text-3xl lg:text-4xl font-semibold;
+  }
+
+  .subtitle-1 {
+    @apply text-xl sm:text-2xl text-neutral-300 font-light leading-relaxed;
+  }
+
+  .subtitle-2 {
+    @apply text-lg sm:text-xl text-neutral-400 font-light leading-relaxed;
+  }
+
+  .body-1 {
+    @apply text-base sm:text-lg text-neutral-200 leading-relaxed;
+  }
+
+  .body-2 {
+    @apply text-sm sm:text-base text-neutral-300 leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#1E3B8A] via-[#2A4A9F] to-[#1A2F2F] bg-clip-text text-transparent;
+  }
+
+  .glassmorphism {
+    @apply backdrop-blur-md bg-neutral-900/50 border border-neutral-800/50;
+  }
+
+  .glassmorphism-strong {
+    @apply backdrop-blur-lg bg-neutral-900/70 border border-neutral-800/50;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-kiburan-blue/10;
+  }
+
+  .card {
+    @apply rounded-2xl bg-neutral-900/50 border border-neutral-800/50 backdrop-blur-sm 
+           transition-all duration-300 hover:border-kiburan-blue/30 hover:shadow-lg hover:shadow-kiburan-blue/5;
+  }
+
+  .interactive-card {
+    @apply card hover:scale-[1.02] hover:-translate-y-1 cursor-pointer;
+  }
+
+  .btn-base {
+    @apply inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300
+           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-neutral-900;
+  }
+
+  .btn-primary {
+    @apply btn-base bg-kiburan-blue text-white px-6 py-3
+           hover:bg-kiburan-blue-light focus:ring-kiburan-blue;
+  }
+
+  .btn-secondary {
+    @apply btn-base border-2 border-neutral-700 text-white px-6 py-3
+           hover:border-kiburan-blue hover:bg-kiburan-blue/10 focus:ring-kiburan-blue;
+  }
+
+  .btn-text {
+    @apply btn-base text-neutral-300 hover:text-white focus:ring-neutral-700;
+  }
+
+  .link {
+    @apply text-neutral-300 hover:text-white transition-colors duration-300 underline-offset-4
+           hover:underline focus:outline-none focus:ring-2 focus:ring-kiburan-blue/50 rounded;
+  }
+
+  .section-divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent my-16 sm:my-20 lg:my-24;
+  }
+}
+
+/* Smooth scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-700);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-600);
+}
+
+/* Selection styling */
+::selection {
+  background: var(--kiburan-blue);
+  color: white;
+}
+
+/* Focus outline styling */
+:focus-visible {
+  outline: 2px solid var(--kiburan-blue);
+  outline-offset: 2px;
+}
+
+/* Animation utilities */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Grid layouts */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width, 250px), 1fr));
+  gap: var(--gap, 1rem);
+}
+
+/* Aspect ratio containers */
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Image optimization */
+.optimize-image {
+  @apply object-cover w-full h-full;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
