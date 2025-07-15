@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Send, MapPin, Phone, Mail, Zap } from 'lucide-react';
+import kiburanLogo from '../assets/kiburan logo.png';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -194,7 +195,7 @@ const Contact = () => {
           <div className="text-center">
             <div className="flex items-center justify-center space-x-3 mb-6">
               <img 
-                src="/src/assets/kiburan logo.png"
+                src={kiburanLogo}
                 alt="Kiburan Logo"
                 className="w-12 h-12 object-contain"
               />

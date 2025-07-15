@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import kiburanLogo from '../assets/kiburan_logo2.png';
+import kiburanLogoName from '../assets/kiburan logo name.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -88,12 +90,12 @@ const Header = () => {
                 className="relative flex items-center"
               >
                 <img 
-                  src="/src/assets/kiburan_logo2.png" 
-                  alt="Kiburan" 
+                  src={kiburanLogo}
+                  alt="Kiburan Logo"
                   className="h-12 md:h-14 object-contain brightness-110"
                 />
                  <img 
-                  src="/src/assets/kiburan logo name.png" 
+                  src={kiburanLogoName}
                   alt="Kiburan" 
                   className="h-13 md:h-14 object-contain brightness-0"
                 />

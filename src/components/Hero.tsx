@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import kiburanLogoAndName from '../assets/kiburan logo and name.png';
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -82,10 +83,10 @@ const Hero = () => {
             transition={{ duration: 1 }}
             className="mb-8"
           >
-            <img 
-              src="/src/assets/kiburan logo and name.png" 
-              alt="Kiburan Rwanda" 
-              className="h-16 md:h-20 mx-auto mb-8 object-contain"
+            <img
+              src={kiburanLogoAndName}
+              alt="Kiburan"
+              className="w-20 max-w-xl mx-auto"
             />
             <h1 className="heading-1 mb-6">
               Empowering Innovation
