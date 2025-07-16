@@ -97,7 +97,7 @@ const Header = () => {
                  <img 
                   src={kiburanLogoName}
                   alt="Kiburan" 
-                  className="h-12 md:h-14 object-contain brightness-0"
+                  className="h-12 md:h-14 object-contain brightness-0 invert"
                 />
           </motion.button>
             </motion.div>
